@@ -375,10 +375,48 @@ Maintained a 5-star rating through consistent quality and timely delivery.
             setInterval(showPopup, 30000); // Show the message every 30 seconds
         };
     </script>
+    <script>
+    const text3 = document.querySelector(".typing3");
+    const words3 = [
+        "HTML, CSS, JS",
+        "React & Node.js",
+        "Python & Java",
+        "MongoDB, MySQL",
+        "Laravel & PHP",
+        "WordPress",
+        "Power BI & Tableau"
+    ];
+    let i3 = 0, j3 = 0, currentWord3 = '', isDeleting3 = false;
+
+    function type3() {
+        if (i3 < words3.length) {
+            if (!isDeleting3 && j3 <= words3[i3].length) {
+                currentWord3 = words3[i3].substring(0, j3++);
+            } else if (isDeleting3 && j3 >= 0) {
+                currentWord3 = words3[i3].substring(0, j3--);
+            }
+
+            text3.innerHTML = currentWord3;
+
+            if (j3 === words3[i3].length) isDeleting3 = true;
+            if (isDeleting3 && j3 === 0) {
+                isDeleting3 = false;
+                i3++;
+                if (i3 === words3.length) i3 = 0;
+            }
+
+            setTimeout(type3, isDeleting3 ? 50 : 150);
+        }
+    }
+
+    type3();
+</script>
+
 
 </body>
 
 </html>
+
 
 
 
