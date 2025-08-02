@@ -220,4 +220,5 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isMobileDevice()) {
         mobileMessage.style.display = "block";
     }
+
 });
